@@ -17,7 +17,7 @@ export const useForm = () => {
     if (!error) return;
     setFormError(error === "url" ? FormErrors.url : FormErrors.api);
     router.replace("/", undefined, { shallow: true });
-  }, [router.pathname]);
+  }, [router.query]);
 
   /**
    * Check if URL is valid and parse owner / repo
